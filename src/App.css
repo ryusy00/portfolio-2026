@@ -1,0 +1,9 @@
+.portfolio {
+  text-align: center;
+}
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+}
+.subTitle {
+  font-size: 1.2rem;
+}

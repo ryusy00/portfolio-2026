@@ -1,0 +1,89 @@
+.intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+    background: #080808;
+    color: #fff;
+}
+
+.intro_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.intro_symbol {
+    display: block;
+    width: clamp(5rem, 10vw, 7rem);
+    height: auto;
+
+    filter: brightness(0) invert(1);
+
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+    transform: translateY(-0.5rem);
+
+    animation: logoReveal 1.6s ease-out 0.2s forwards;
+}
+
+.intro_name {
+    margin: 0;
+    padding-left: 0.3em;
+
+    color: #fff;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: 600;
+    letter-spacing: 0.3em;
+
+    opacity: 0;
+    transform: translateY(0.5rem);
+
+    animation: nameReveal 0.8s ease-out 1.4s forwards;
+}
+
+@keyframes logoReveal {
+    from {
+        clip-path: inset(0 0 100% 0);
+        opacity: 0;
+        transform: translateY(-0.5rem);
+    }
+
+    to {
+        clip-path: inset(0);
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes nameReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .intro_symbol,
+    .intro_name {
+        animation-duration: 0.01ms;
+        animation-delay: 0ms;
+    }
+
+    .intro_symbol {
+        clip-path: inset(0);
+        opacity: 1;
+        transform: none;
+    }
+
+    .intro_name {
+        opacity: 1;
+        transform: none;
+    }
+}
