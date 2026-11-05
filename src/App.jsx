@@ -2,6 +2,7 @@
 import { useCallback, useState } from 'react'
 import './App.css'
 import Intro from './components/Intro'
+import Header from './components/Header'
 
 function App() {
   const [showIntro, setShowIntro] = useState(true)
@@ -15,6 +16,8 @@ function App() {
       {showIntro && (
         <Intro onFinish={handleIntroFinish} />
       )}
+
+      <Header />
 
       <main className="portfolio">
         <h1 className="title">My Portfolio</h1>
