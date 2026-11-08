@@ -30,9 +30,9 @@ function Header() {
                 <span />
             </button>
 
-            <nav 
+            <nav
                 id="header-navigation"
-                className={`header_nav &{menuOoen ? 'is-open' : ''}`}
+                className={`header_nav ${menuOpen ? 'is-open' : ''}`}
                 aria-label="메인 내비게이션"
                 >
                 <a href="#about" onClick={closeMenu}>
