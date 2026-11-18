@@ -1,4 +1,7 @@
 .portfolio {
+  width: 100%;
+  min-height: 100vh;
+  background: #111211;
   text-align: center;
 }
 .title {

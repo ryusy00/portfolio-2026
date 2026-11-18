@@ -3,6 +3,8 @@ import { useCallback, useState } from 'react'
 import './App.css'
 import Intro from './components/Intro'
 import Header from './components/Header'
+import Hero from './components/Hero'
+import About from './components/About'
 
 function App() {
   const [showIntro, setShowIntro] = useState(true)
@@ -17,14 +19,16 @@ function App() {
         <Intro onFinish={handleIntroFinish} />
       )}
 
-      <Header />
+      {!showIntro && (
+        <>
+          <Header />
 
-      <main className="portfolio">
-        <h1 className="title">My Portfolio</h1>
-        <p className="subtitle">
-          Web Publisher & Frontend Developer
-        </p>
-      </main>
+          <main className="portfolio">
+            <Hero />
+            <About />
+          </main>
+        </>
+      )}
     </>
   )
 }

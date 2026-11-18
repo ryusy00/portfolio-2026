@@ -1,0 +1,132 @@
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 100px clamp(25px, 10vw, 100px);
+    color: #f5f5f0;
+    background: #111211;
+    overflow: hidden;
+}
+.hero_inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.hero_label {
+    margin-bottom: 36px;
+    color: #c8ff57;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+}
+.hero_title {
+    margin: 0;
+    font-size: clamp(3rem, 7.5vw, 7rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.065em;
+    color: #f5f5f0;
+}
+.hero_title {
+    color: #c8ff57;
+}
+.hero_bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-top: 64px;
+}
+.hero_description {
+    color: #aeb1a8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+.hero_link {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 0;
+    color: #f5f5f0;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    border-radius: 1px solid #c8ff57;
+    transition: color 0.2s ease;
+}
+.hero_link:hover {
+    color: #c8ff57;
+}
+.hero_link span {
+    color: #c8ff57;
+    font-size: 1.2rem;
+}
+.hero_index {
+    position: absolute;
+    right: clamp(24px, 5vw, 80px);
+    bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #aeb1a8;
+    font-size: 0.7rem;
+}
+.hero_index span:first-child {
+    color: #c8ff57;
+}
+.hero_index_line {
+    width: 40px;
+    height: 1px;
+    background: #555;
+}
+.reveal {
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+}
+.reveal_1 { animation-delay: 0.2s; }
+.reveal_2 { animation-delay: 0.4s; }
+.reveal_3 { animation-delay: 0.7s; }
+.reveal_4 { animation-delay: 0.9s; }
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        animation: none;
+    }
+}
+
+@media (max-width: 760px) {
+    .hero {
+        min-height: calc(100svh - 70px);
+        padding: 80px 24px 110px;
+    }
+    .hero_label {
+        margin-bottom: 28px;
+    }
+    .hero_title {
+        font-size: clamp(2.8rem, 11vw, 5rem);
+    }
+    .hero_bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 40px;
+    }
+    .hero_description {
+        font-size: 0.85rem;
+    }
+    .hero_index {
+        right: 24px;
+        bottom: 30px;
+    }
+}
